@@ -43,6 +43,6 @@ Nguồn dẫn tham khảo tạo nên game:
 
 -Các tấm ảnh và background được tạo nên từ AI bằng văn bản.
 
--Link googleDrive mô tả chi tiết tất cả source code của game:
+-Link googleDrive mô tả chi tiết tất cả source code của game:https://drive.google.com/file/d/1bdHr2lodLuSaLH5888sRx96vPBvY6MKg/view?fbclid=IwY2xjawJ4rQZleHRuA2FlbQIxMABicmlkETF0UlhmWW53NHp2TVl3MHoyAR5UPuhRhWeedbjblz7JNmqnIcscQZbW8mV7IH-LMx57W0O6nzFXOB-VrfdYcg_aem_N3rhlygNNMrMmPOT6GHufQ
 
 Hãy cùng tham gia vào thế giới Age Of War-nơi đem lại cho bạn sự thử thách,tính kiên nhẫn và phản xạ nhanh chóng.Hãy đưa chiếc máy bay của chiến tranh về nơi an toàn!
