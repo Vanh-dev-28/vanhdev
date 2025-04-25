@@ -7,9 +7,11 @@ Mục tiêu là đưa máy bay bay qua các khoảng trống giữa các ống m
 
 Mô tả về các đối tượng trong trò chơi
 
-![image](https://github.com/user-attachments/assets/33bd5cc6-564d-4b53-a1be-29e51f1e7a77): là nhân vật chính của trò chơi,người chơi cần phải điều khiển bằng cách nhấn space để máy bay bay lên,nếu không máy bay sẽ rơi xuống bởi tác dụng của trọng lực.
+![image](https://github.com/user-attachments/assets/33bd5cc6-564d-4b53-a1be-29e51f1e7a77)
+: là nhân vật chính của trò chơi,người chơi cần phải điều khiển bằng cách nhấn space để máy bay bay lên,nếu không máy bay sẽ rơi xuống bởi tác dụng của trọng lực.
 
-![image](https://github.com/user-attachments/assets/ec7533ba-3a82-4c1b-b3bc-9f36b48bf029): Mối nguy hiểm của nhân vật chính,khi máy bay va chạm với ống nước sẽ lập tức bị rớt xuống,người chơi sẽ thua cuộc.
+![image](https://github.com/user-attachments/assets/ec7533ba-3a82-4c1b-b3bc-9f36b48bf029)
+: Mối nguy hiểm của nhân vật chính,khi máy bay va chạm với ống nước sẽ lập tức bị rớt xuống,người chơi sẽ thua cuộc.
 
 Mô tả game play, xử lý va chạm:
 1.Trò chơi thuộc thể loại arcade với cách điều khiển chỉ có một thao tác: chạm màn hình để khiến máy bay bay lên. Khi không chạm, máy bay sẽ rơi xuống do lực hấp dẫn. Người chơi phải điều chỉnh nhịp độ chạm để giúp máy bay bay qua các khe hở giữa cột ống nước màu xám mà không va vào chúng.
@@ -19,11 +21,16 @@ Age of War sử dụng cơ chế phát hiện va chạm dựa trên hình chữ 
 
 Va chạm với các đường ống: Mỗi cặp ống được lập trình như hai hình chữ nhật – một ở trên và một ở dưới – với khoảng trống đủ cho máy bay bay qua. Nếu bất kỳ phần nào của hình chữ nhật bao quanh máy bay chồng lên hình chữ nhật của đường ống, trò chơi coi như đã có va chạm và lập tức kết thúc.
 
+
 Va chạm với mặt đất: Dưới cùng màn hình là nền đất (ground) hoạt động như một bề mặt cố định. Nếu máy bay rơi xuống thấp hơn một ngưỡng nhất định, nó sẽ chạm đất và trò chơi kết thúc ngay lập tức.
 
+
 Va chạm với giới hạn phía trên màn hình: Nếu người chơi liên tục chạm khiến máy bay bay quá cao, nó sẽ đụng vào giới hạn trên cùng của màn hình, cũng gây ra kết thúc trò chơi.
+
 2.2. Xử lý khi xảy ra va chạm: Game sẽ tự động kết thúc và thoát ra khỏi màn hình khi xảy ra va chạm
+
 2.3:Ảnh hưởng của cơ chế va chạm đến trải nghiệm người chơi
+
 Do xử lý va chạm mang tính tức thời và không cho phép sai sót, Age Of War trở thành một trò chơi cực kỳ thách thức. Chỉ cần một khoảnh khắc mất tập trung, người chơi sẽ thất bại ngay lập tức. Chính điều này khiến game trở nên gây nghiện, thúc đẩy người chơi thử lại nhiều lần để cải thiện thành tích.
 
 Nguồn dẫn tham khảo tạo nên game:
