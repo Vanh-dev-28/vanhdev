@@ -115,21 +115,51 @@ Mỗi file có vai trò riêng để giúp trò chơi hoạt động đúng các
 
 8️⃣ game1.cpp - Logic chính của trò chơi
 👉 Vai trò: Chứa vòng lặp chính (gameLoop()), gọi update() và render(). 
-👉 Chứa:  void update() có nhiệm vụ cập nhật trạng thái game trước khi hiển thị!
+👉 Chứa:  
+   void update() có nhiệm vụ cập nhật trạng thái game trước khi hiển thị!
+   
                         Trong vòng lặp game, update() giúp: ✅ 1️⃣ Cập nhật vị trí của vật thể (máy bay,ống nước). 
+                        
                                                             ✅ 2️⃣ Kiểm tra va chạm giữa các vật thể. 
+                                                            
                                                             ✅ 3️⃣ Xóa vật thể nếu cần.
-           void render()   Vẽ tất cả vật thể: nền, máy bay, ống nước.
-                           Cập nhật hình ảnh mới lên cửa sổ game (SDL_RenderPresent() 
-           void handleEvents() giúp xử lý các sự kiện do người chơi thực hiện!
-                               Vai trò của handleEvents():  Nhận input từ bàn phím hoặc chuột (ví dụ: nhấn phím để chim bay lên). 
-          void Init()  1️⃣ Khởi động thư viện SDL -> SDL_Init(SDL_INIT_VIDEO) giúp khởi động SDL để vẽ đồ họa. 
+                                                            
+                                                  
+   void render()   Vẽ tất cả vật thể: nền, máy bay, ống nước.
+   
+                  Cập nhật hình ảnh mới lên cửa sổ game (SDL_RenderPresent() 
+                  
+   void handleEvents() giúp xử lý các sự kiện do người chơi thực hiện!
+   
+                       Vai trò của handleEvents():  Nhận input từ bàn phím hoặc chuột (ví dụ: nhấn phím để chim bay lên). 
+
+
+
+ 
+   void Init()         1️⃣ Khởi động thư viện SDL -> SDL_Init(SDL_INIT_VIDEO) giúp khởi động SDL để vẽ đồ họa. 
+
+   
                        2️⃣ Tạo cửa sổ game -> SDL_CreateWindow() tạo cửa sổ hiển thị trò chơi. 
+
+                       
                        3️⃣ Khởi tạo bộ xử lý đồ họa (Renderer) ->  SDL_CreateRenderer() giúp game vẽ hình ảnh lên cửa sổ. 
-                       4️⃣ Tải tài nguyên (ảnh, âm thanh) -> Nếu có hình ảnh, IMG_LoadTexture() sẽ tải ảnh chim, ống nước, nền.  
+
+                       
+                       4️⃣ Tải tài nguyên (ảnh, âm thanh) -> Nếu có hình ảnh, IMG_LoadTexture() sẽ tải ảnh chim, ống nước, nền.
+
+                       
                        5️⃣ Khởi tạo các đối tượng trong game -> Tạo danh sách chim, ống nước, sao, chướng ngại vật.
-         void clean(): Hàm clean() giúp dọn dẹp tài nguyên khi game kết thúc!
-                       Trong game sử dụng SDL, cần giải phóng tài nguyên như ảnh, cửa sổ, renderer khi thoát. 1️⃣ Giải phóng bộ nhớ của SDL. 
-                                                                                                              2️⃣ Đóng cửa sổ game. 
-                                                                                                              3️⃣ Xóa hình ảnh, âm thanh đã tải vào bộ nhớ.
-         bool checkCollision(): Kiểm tra xem chim va chạm với ống hay chưa
+
+                       
+   void clean(): Hàm clean() giúp dọn dẹp tài nguyên khi game kết thúc!
+   
+                 Trong game sử dụng SDL, cần giải phóng tài nguyên như ảnh, cửa sổ, renderer khi thoát. 1️⃣ Giải phóng bộ nhớ của SDL.
+
+                 
+                                                                                                        2️⃣ Đóng cửa sổ game.
+                                                                                                        
+                                                                                                        
+                                                                                                        3️⃣ Xóa hình ảnh, âm thanh đã tải vào bộ nhớ.
+                                                                                                        
+                                                                                                        
+  bool checkCollision(): Kiểm tra xem chim va chạm với ống hay chưa
