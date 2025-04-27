@@ -46,7 +46,9 @@ Nhân vật chính đòi hỏi sự khéo léo của người chơi để vượ
 ![pipe](https://github.com/user-attachments/assets/defed177-bfda-4cc4-b432-2ba1bd2ad078)
 Vật cản duy nhất cần né tránh
 
-Nhạc nền được lấy từ: https://pixabay.com/vi/music/search/nh%E1%BA%A1c%20chi%E1%BA%BFn%20tranh%20ho%C3%A0nh%20tr%C3%A1ng/
+Nhạc nền được lấy từ: https://pixabay.com/vi/music/search/nh%E1%BA%A1c%20chi%E1%BA%BFn%20tranh%20ho%C3%A0nh%20tr%C3%A1ng/ 
+
+Video chạy mã nguồn trực tiếp : https://drive.google.com/file/d/1ZdrDxX2agnzF1J1It2HkFRxGa7cyVp_a/view?usp=drive_link
 
 Giải trình các file thiết lập trong game:
 Mỗi file có vai trò riêng để giúp trò chơi hoạt động đúng cách. 
