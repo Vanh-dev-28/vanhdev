@@ -48,6 +48,73 @@ Vật cản duy nhất cần né tránh
 
 Nhạc nền được lấy từ: https://pixabay.com/vi/music/search/nh%E1%BA%A1c%20chi%E1%BA%BFn%20tranh%20ho%C3%A0nh%20tr%C3%A1ng/
 
+Giải trình các file thiết lập trong game:
+Mỗi file có vai trò riêng để giúp trò chơi hoạt động đúng cách. ✅ File .cpp chứa mã nguồn thực thi logic. ✅ File .h chứa khai báo để các file khác có thể sử dụng.
 
 
+ 1️⃣ main.cpp - File khởi động trò chơi
+👉 Vai trò: Đây là file chính, nơi khởi động game. 
+👉 Chứa: Vòng lặp game (gameLoop()), khởi tạo cửa sổ SDL, và gọi update() + render().
 
+
+ 2️⃣ main.h - Khai báo chung
+👉 Vai trò: Chứa khai báo chung cho toàn game (hằng số, kích thước, biến toàn cục). 
+👉 Chứa: Định nghĩa các giá trị như SCREEN_WIDTH, SCREEN_HEIGHT.
+
+
+ 3️⃣ bird.h - Khai báo lớp máy bay
+👉 Vai trò: Khai báo cấu trúc và chức năng của máy bay. 
+👉 Chứa:  struct Bird với các thuộc tính như x, y, velocity.  
+          Hàm update() để điều khiển bay của máy bay. 
+          Hàm render() để vẽ máy bay lên màn hình.
+
+
+ 4️⃣ bird.cpp - Thực thi logic của Máy bay
+👉 Vai trò: Xử lý chuyển động, trọng lực và vẽ máy bay
+👉 Chứa: Bird::update() để máy bay rơi xuống hoặc bay lên khi nhấn phím. 
+          Bird::render() để hiển thị máy bay trên màn hình.
+          Bird::flap() để điều khiển máy bay.
+
+
+ 5️⃣ pipe.h - Khai báo lớp ống nước
+👉 Vai trò: Khai báo cấu trúc của ống nước (chướng ngại vật). 
+👉 Chứa:  struct Pipe với thuộc tính x, height, width. 
+           Hàm update() để ống nước di chuyển. 
+           Hàm render() để vẽ ống nước lên màn hình.
+
+
+ 6️⃣ pipe.cpp - Thực thi logic ống nước
+👉 Vai trò: Xử lý di chuyển ống nước từ phải sang trái.
+👉 Chứa: Pipe::update() để di chuyển ống nước. 
+          Pipe::render() để vẽ ống nước. 
+          Kiểm tra va chạm giữa chim và ống nước (SDL_HasIntersection()).
+          Nơi đặt các hằng số như chiều cao ống,chiều rộng ống , khoảng cách giữa hai ống,...
+
+
+ 7️⃣ game.h - Quản lý trò chơi
+👉 Vai trò: Khai báo các phần của game, danh sách vật thể (bird, pipes, ). 
+👉 Chứa:  Khai báo danh sách std::vector<Pipe> pipes. 
+          Hàm resetGame() để thiết lập lại trò chơi khi máy bay chết.
+          Khai báo các hàm để sử dụng trong file game1.cpp như init(),handleEvent(),update(),render(),clean.
+
+
+ 8️⃣ game1.cpp - Logic chính của trò chơi
+👉 Vai trò: Chứa vòng lặp chính (gameLoop()), gọi update() và render(). 
+👉 Chứa:  void update() có nhiệm vụ cập nhật trạng thái game trước khi hiển thị!
+                        Trong vòng lặp game, update() giúp: ✅ 1️⃣ Cập nhật vị trí của vật thể (máy bay,ống nước). 
+                                                            ✅ 2️⃣ Kiểm tra va chạm giữa các vật thể. 
+                                                            ✅ 3️⃣ Xóa vật thể nếu cần.
+           void render()   Vẽ tất cả vật thể: nền, máy bay, ống nước.
+                           Cập nhật hình ảnh mới lên cửa sổ game (SDL_RenderPresent() 
+           void handleEvents() giúp xử lý các sự kiện do người chơi thực hiện!
+                               Vai trò của handleEvents():  Nhận input từ bàn phím hoặc chuột (ví dụ: nhấn phím để chim bay lên). 
+          void Init()  1️⃣ Khởi động thư viện SDL -> SDL_Init(SDL_INIT_VIDEO) giúp khởi động SDL để vẽ đồ họa. 
+                       2️⃣ Tạo cửa sổ game -> SDL_CreateWindow() tạo cửa sổ hiển thị trò chơi. 
+                       3️⃣ Khởi tạo bộ xử lý đồ họa (Renderer) ->  SDL_CreateRenderer() giúp game vẽ hình ảnh lên cửa sổ. 
+                       4️⃣ Tải tài nguyên (ảnh, âm thanh) -> Nếu có hình ảnh, IMG_LoadTexture() sẽ tải ảnh chim, ống nước, nền.  
+                       5️⃣ Khởi tạo các đối tượng trong game -> Tạo danh sách chim, ống nước, sao, chướng ngại vật.
+         void clean(): Hàm clean() giúp dọn dẹp tài nguyên khi game kết thúc!
+                       Trong game sử dụng SDL, cần giải phóng tài nguyên như ảnh, cửa sổ, renderer khi thoát. 1️⃣ Giải phóng bộ nhớ của SDL. 
+                                                                                                              2️⃣ Đóng cửa sổ game. 
+                                                                                                              3️⃣ Xóa hình ảnh, âm thanh đã tải vào bộ nhớ.
+         bool checkCollision(): Kiểm tra xem chim va chạm với ống hay chưa
