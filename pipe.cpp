@@ -45,5 +45,10 @@ void Pipe::render(SDL_Renderer* renderer) {
 }
 
 bool Pipe::checkCollision(SDL_Rect birdRect) {
+    int safeWidth = 20;  // ✅ Chim có thể chạm 15 pixels theo chiều rộng mà không chết
+    int safeHeight = 30; // ✅ Chim có thể chạm 10 pixels theo chiều dài mà không chết
+
+    SDL_Rect topSafeRect = { topPipe.x + safeWidth, topPipe.y, topPipe.w - safeWidth * 2, topPipe.h - safeHeight };
+    SDL_Rect bottomSafeRect = { bottomPipe.x + safeWidth, bottomPipe.y + safeHeight, bottomPipe.w - safeWidth * 2, bottomPipe.h - safeHeight };
     return SDL_HasIntersection(&birdRect, &topPipe) || SDL_HasIntersection(&birdRect, &bottomPipe);
 }

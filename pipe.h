@@ -14,7 +14,8 @@ public:
     void reset(int newX); 
     bool checkCollision(SDL_Rect birdRect); 
     SDL_Rect topPipe;
-    SDL_Rect bottomPipe; // Fix lỗi chưa khai báo bottomPipe
+    SDL_Rect bottomPipe;
+    SDL_Rect rect;
     bool scored; // Kiểm tra nếu chim đã bay qua ống nước
 
 private:

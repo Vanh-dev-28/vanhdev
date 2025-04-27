@@ -10,10 +10,10 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    while (game.running) {  
+    while (game.running) {
         game.handleEvents();
-        game.update();
         game.render();
+        game.update();
         SDL_Delay(16);
     }
 
